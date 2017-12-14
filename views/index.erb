@@ -1,0 +1,14 @@
+<h1>게시판 입니다.</h1>
+<a href="/new">글쓰기</a>
+
+<% @posts.each do |post| %>
+  <p>
+    <%= post.id %>
+    <%= post.title %>
+    <%= post.content %>
+    <%= post.author %>
+    <%= post.created_at %>
+    <a href="/destroy/<%= post.id %>">[삭제]</a>
+    <a href="/edit/<%= post.id %>">[수정]</a>
+  </p>
+<% end %>
